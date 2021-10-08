@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="my_books_tree">
+            <field name="name">my.books.tree</field>
+            <field name="model">my.books</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="my_books_form">
+            <field name="name">my.books.form</field>
+            <field name="model">my.books</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <widget name="web_ribbon" title="New" bg_color="bg-danger"
+                                attrs="{'invisible': [('status', '!=', 'new')]}"/>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="author"/>
+<!--                                <field name="published_date"/>-->
+                                              <field name="published_date" options='{"datepicker": {"daysOfWeekDisabled": [0, 6]}}'/>
+                                <!--              use this para yung mga weekends like sunday at sun hindi maselect sa dates-->
+                                <!--              <field name="published_date" options="{'datepicker': {'warn_future': true, 'minDate': '2020-01-01'}}"/>-->
+                                <!--              use this to disable date after 2020 january, di na sila pwede iselect-->
+                            </group>
+                            <group>
+                                <field name="status"/>
+                            </group>
+                        </group>
+
+
+                        <notebook>
+                            <page string="Description">
+                                <field name="desc"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="my_books_search" model="ir.ui.view">
+            <field name="name">my.books.search</field>
+            <field name="model">my.books</field>
+            <field name="arch" type="xml">
+                <search string="Search Books">
+                    <field name="name"/>
+                    <!--              <searchpanel>-->
+                    <!--                  <field name="status" icon="fa-filter"/>-->
+                    <!--              </searchpanel>-->
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="my_books_action">
+            <field name="name">Books</field>
+            <field name="res_model">my.books</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+    </data>
+</odoo>

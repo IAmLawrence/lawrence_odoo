@@ -1,0 +1,41 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="my_test_tree">
+      <field name="name">my.test.tree</field>
+      <field name="model">my.test</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="m2o_test"/>
+          <field name="num_test"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="my_test_form">
+      <field name="name">my.test.form</field>
+      <field name="model">my.test</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="display_text" readonly="True"/>
+              <field name="name"/>
+              <field name="m2o_test" options="{'no_create': True}"/>
+              <field name="num_test"/>
+<!--              <field name="bool_check"/>-->
+              <button name="btn_test" string="Click" type="object"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="my_test_action">
+      <field name="name">Test</field>
+      <field name="res_model">my.test</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+  </data>
+</odoo>
