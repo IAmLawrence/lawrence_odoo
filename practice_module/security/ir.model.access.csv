@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+my_books_user,my_books.user,model_my_books,base.group_user,1,1,1,1
+model_viewer_3d_user,model_viewer_3d.user,model_model_viewer_3d,base.group_user,1,1,1,1
+embedded_video_user,embedded_video.user,model_embedded_video,base.group_user,1,1,1,1
