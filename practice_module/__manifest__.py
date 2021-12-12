@@ -22,6 +22,7 @@
     # any module necessary for this one to work correctly
     'depends': [
         'base',
+        'web_notify',
         'web_widget_model_viewer',
     ],
 

@@ -16,6 +16,13 @@
             <field name="model">my.books</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <button string="Set to draft" name="btn_draft" type="object" states="confirm,cancel"/>
+                        <button string="Confirm" name="btn_confirm" type="object" class="oe_highlight" states="draft"/>
+                        <button string="Done" name="btn_done" type="object" class="oe_highlight" states="confirm"/>
+                        <button string="Cancel" name="btn_cancel" type="object" states="done"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
                     <sheet>
                         <widget name="web_ribbon" title="New" bg_color="bg-danger"
                                 attrs="{'invisible': [('status', '!=', 'new')]}"/>
@@ -31,6 +38,7 @@
                             </group>
                             <group>
                                 <field name="status"/>
+                                <field name="user_id"/>
                             </group>
                         </group>
 
