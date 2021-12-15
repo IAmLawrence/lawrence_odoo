@@ -22,6 +22,7 @@
     # any module necessary for this one to work correctly
     'depends': [
         'base',
+        'website',
         'web_notify',
         'web_widget_model_viewer',
     ],
@@ -31,6 +32,7 @@
         'security/ir.model.access.csv',
         'views/my_library.xml',
         'views/for_testing.xml',
+        'views/templates.xml',
         'views/menu_items.xml',
     ],
     # only loaded in demonstration mode

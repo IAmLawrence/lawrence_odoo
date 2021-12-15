@@ -1,24 +1,29 @@
 <odoo>
     <data>
-<!--
-        <template id="listing">
-          <ul>
-            <li t-foreach="objects" t-as="object">
-              <a t-attf-href="#{ root }/objects/#{ object.id }">
-                <t t-esc="object.display_name"/>
-              </a>
-            </li>
-          </ul>
-        </template>
-        <template id="object">
-          <h1><t t-esc="object.display_name"/></h1>
-          <dl>
-            <t t-foreach="object._fields" t-as="field">
-              <dt><t t-esc="field"/></dt>
-              <dd><t t-esc="object[field]"/></dd>
+        <template id="my_books_web_temp">
+            <t t-call="website.layout">
+                <t t-set="title">My books Record</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <t t-foreach="books_rec" t-as="book">
+                            <p>
+                                <a t-attf-href="/practice_module/{{slug(book)}}"><t t-esc="book.name"/></a>
+                            </p>
+                        </t>
+                    </div>
+                </div>
             </t>
-          </dl>
         </template>
--->
+
+                <template id="books_web_temp">
+            <t t-call="website.layout">
+                <t t-set="title">Specific book</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <h1>Books: <t t-esc="rec.name"/></h1>
+                    </div>
+                </div>
+            </t>
+        </template>
     </data>
 </odoo>
