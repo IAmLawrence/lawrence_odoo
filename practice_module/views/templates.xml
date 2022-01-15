@@ -7,7 +7,9 @@
                     <div class="container">
                         <t t-foreach="books_rec" t-as="book">
                             <p>
-                                <a t-attf-href="/practice_module/{{slug(book)}}"><t t-esc="book.name"/></a>
+                                <a t-attf-href="/practice_module/{{slug(book)}}">
+                                    <t t-esc="book.name"/>
+                                </a>
                             </p>
                         </t>
                     </div>
@@ -15,12 +17,14 @@
             </t>
         </template>
 
-                <template id="books_web_temp">
+        <template id="books_web_temp">
             <t t-call="website.layout">
                 <t t-set="title">Specific book</t>
                 <div class="oe_structure">
                     <div class="container">
-                        <h1>Books: <t t-esc="rec.name"/></h1>
+                        <h1>Books:
+                            <t t-esc="rec.name"/>
+                        </h1>
                     </div>
                 </div>
             </t>
