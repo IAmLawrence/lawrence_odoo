@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="importing_api_tree">
+            <field name="name">importing.api.tree</field>
+            <field name="model">importing.api</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="fields_to_import"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="importing_api_form">
+            <field name="name">importing.api.form</field>
+            <field name="model">importing.api</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Import Data" name="btn_import_data" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="fields_to_import"/>
+                                <field name="api_link"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="importing_api_action">
+            <field name="name">Import API</field>
+            <field name="res_model">importing.api</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

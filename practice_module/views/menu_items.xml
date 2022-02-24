@@ -6,7 +6,7 @@
                 web_icon="practice_module,static/description/lawrence_icon.jpg"
         />
 
-                <menuitem
+        <menuitem
                 name="Library"
                 id="my_library_main_menu"
                 parent="practice_module.lawrence_odoo_root_menu"
@@ -20,6 +20,24 @@
                 action="practice_module.my_books_action"
                 sequence="0"
         />
+
+        <!--        Menus for configuration-->
+        <menuitem
+                name="Configuration"
+                id="configuration_main_menu"
+                parent="practice_module.lawrence_odoo_root_menu"
+                sequence="100"
+        />
+
+        <menuitem
+                name="Importing API"
+                id="import_api_menu"
+                parent="practice_module.configuration_main_menu"
+                action="practice_module.importing_api_action"
+                sequence="0"
+        />
+
+        <!--        Menus for  testing-->
 
         <menuitem
                 name="For Testing"
@@ -43,6 +61,7 @@
                 action="practice_module.embedded_video_action"
                 sequence="5"
         />
+
 
     </data>
 </odoo>

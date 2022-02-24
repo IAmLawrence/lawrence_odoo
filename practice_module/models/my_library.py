@@ -1,4 +1,6 @@
 from odoo import fields, api, models
+import json
+import requests
 
 
 class MyBooks(models.Model):
@@ -29,6 +31,15 @@ class MyBooks(models.Model):
     def btn_confirm(self):
         self.state = 'confirm'
         self.user_id.notify_danger("Okay")
+
+    def button_import_tags(self):
+        stock_picking_ids = self.browse(self._context.get('active_ids'))
+        response = requests.get("https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=stackoverflow")
+        for rec in stock_picking_ids:
+            for data in response.json()['items']:
+                for x in data['tags']:
+                    print(x)
+                    rec.name = x
 
     def btn_done(self):
         self.state = 'done'

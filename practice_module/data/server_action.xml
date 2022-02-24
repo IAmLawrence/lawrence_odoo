@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+<!--        <record id="action_import_question_tag_api" model="ir.actions.server">-->
+<!--            <field name="name">Import Tag in API stackexchange</field>-->
+<!--            <field name="model_id" ref="model_my_books"/>-->
+<!--&lt;!&ndash;            <field name="condition">True</field>&ndash;&gt;-->
+<!--            <field name="type">ir.actions.server</field>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">record.button_import_tags()</field>-->
+<!--            <field name="sequence">5</field>-->
+<!--        </record>-->
+
+        <record id="action_import_question_tag_api" model="ir.actions.server">
+	<field name="name">Import Tag in API stackexchange</field>
+	<field name="model_id" ref="practice_module.model_my_books" />
+	<field name="binding_model_id" ref="practice_module.model_my_books" />
+	<field name="state">code</field>
+	<field name="code">records.button_import_tags()</field>
+</record>
+
+    </data>
+</odoo>
